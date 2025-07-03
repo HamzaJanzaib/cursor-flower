@@ -1,4 +1,6 @@
+import StickyCursor from "@/Components/StickyCursor";
 import "./globals.css";
+import Header from "@/Components/Header";
 
 export const metadata = {
   title: "Create Next App",
@@ -10,6 +12,9 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
       >
+        <Header />
+        <StickyCursor />
+
         {children}
       </body>
     </html>

@@ -1,13 +1,24 @@
-import Header from '@/Components/Header'
-import StickyCursor from '@/Components/StickyCursor'
+"use client"
+import PromoBanner from '@/Components/PromoBanner';
+import React, { useState } from 'react';
 
-const Home = () => {
+function Home() {
+  const [showBanner, setShowBanner] = useState(true);
+
   return (
-    <div>
-      <Header />
-      <StickyCursor />
-    </div>
-  )
+    <>
+      {showBanner && (
+        <PromoBanner
+        setClose={setShowBanner}
+          onClaim={() => {
+            alert('Offer Claimed!');
+            setShowBanner(false);  
+          }}
+        />
+      )}
+      {/* rest of your Home */}
+    </>
+  );
 }
 
-export default Home
+export default Home;
